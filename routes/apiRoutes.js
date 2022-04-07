@@ -29,16 +29,14 @@ router.post('/notes', (req, res) => {
   res.json(userJSON);
 });
 
-//router.delete('/notes/:id', (req, res) => {
-//  const clickedId = dataPlan.some(obj => obj.id === req.params.id);
-//  if(clickedId){
-//  const filteredId = dataPlan.filter(obj => obj.id !== req.params.id);
-//  res.json(filteredId);
-//};
-//let data = fs.readFileSync(databaseFile); 
-//JSON.parse(data);
-//res.json(dataPlan);
-//});
+router.delete('/notes/:id', (req, res) => {
+  const clickedId = dataPlan.some(obj => obj.id === req.params.id);
+  if(clickedId){
+  const filteredId = dataPlan.filter(obj => obj.id !== req.params.id);
+  dataPlan.pop(filteredId);
+};
+res.json(dataPlan);
+});
 
 
 module.exports = router;
