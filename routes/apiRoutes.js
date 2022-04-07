@@ -29,15 +29,16 @@ router.post('/notes', (req, res) => {
   res.json(userJSON);
 });
 
-router.delete('/notes/:id', (req, res) => {
-  var userId = req.params.id;
-
-  req.dataPlan.get('notes').remove({'id': userId}, function(error, document) {
-   if (error) res.send(error);
-   return res.send("deleted");
-  });
-});
-
+//router.delete('/notes/:id', (req, res) => {
+//  const clickedId = dataPlan.some(obj => obj.id === req.params.id);
+//  if(clickedId){
+//  const filteredId = dataPlan.filter(obj => obj.id !== req.params.id);
+//  res.json(filteredId);
+//};
+//let data = fs.readFileSync(databaseFile); 
+//JSON.parse(data);
+//res.json(dataPlan);
+//});
 
 
 module.exports = router;
